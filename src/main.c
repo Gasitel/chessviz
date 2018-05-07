@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include "layout.h"
-#include "move.h"
-#include "output.h"
-
-void PawnMove ();
-void PawnMoveWhite ();
-void PawnMoveBlack ();
+#include "uheader.h"
 
 int main()
 {	
@@ -26,6 +19,7 @@ int main()
 			flag = 0;
 			printf("Print positions (ex: a2 a3)\n");
 			scanf("%c %d %c %d", &xx, &yy, &xx1, &yy1);
+			board1 (xx, yy, xx1, yy1);
 			if (xx == 'a') {x = 1; flag++;}
 			if (xx == 'b') {x = 2; flag++;}
 			if (xx == 'c') {x = 3; flag++;}
@@ -63,7 +57,10 @@ int main()
 			if (yy1 == 8) {y1 = 1; flag++;}
 		} while (flag != 4);
 		printf("\n\n");	
-		PawnMove(y, x, y1, x1, A);
+		if(!move(y, x, y1, x1, A)) 
+		{
+			printf("Wrong move\n");
+		}
 		output(A);
 		printf("\n\nExit? (print 'y')\n");
 		scanf(" %c", &con);

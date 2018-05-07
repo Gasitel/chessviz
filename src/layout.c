@@ -1,6 +1,5 @@
 #include "uheader.h"
 
-
 void layout(char (*A)[10])
 {
 	int i, j;
