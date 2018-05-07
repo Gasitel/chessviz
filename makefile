@@ -1,3 +1,4 @@
+
 all: program
 
 program: build/main.o build/layout.o build/output.o build/move.o bin
@@ -30,4 +31,5 @@ bin:
 .PHONY: clean
 
 clean:
-rm -rf bin build
+
+		rm -rf bin build
